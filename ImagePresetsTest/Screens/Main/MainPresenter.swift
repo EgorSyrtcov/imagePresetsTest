@@ -7,12 +7,15 @@
 
 import Foundation
 
-protocol MainViewProtocol: AnyObject {}
+protocol MainViewProtocol: AnyObject {
+    func showSpinner()
+    func hideSpinner()
+}
 
 protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, router: RouterProtocol, dependencies: Dependencies)
     
-    func fetchImages()
+    func fetchUser()
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
@@ -20,6 +23,8 @@ final class MainPresenter: MainViewPresenterProtocol {
     private weak var view: MainViewProtocol?
     private var router: RouterProtocol?
     private var dependencies: Dependencies
+    
+    private var allUsers = [User]()
     
     required init(view: MainViewProtocol, router: RouterProtocol, dependencies: Dependencies) {
         self.view = view
@@ -30,7 +35,14 @@ final class MainPresenter: MainViewPresenterProtocol {
 
 extension MainPresenter {
     
-    func fetchImages() {
-        
+    func fetchUser() {
+        view?.showSpinner()
+        dependencies.apiService.fetchUsers { [weak self] users in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self?.allUsers = users
+                self?.view?.hideSpinner()
+            }
+        }
     }
+
 }

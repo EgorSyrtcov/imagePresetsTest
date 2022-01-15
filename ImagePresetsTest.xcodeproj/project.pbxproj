@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E260BB1F2792C98800B68B24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260BB1E2792C98800B68B24 /* User.swift */; };
 		E282B30B2791C8DF00C288CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B30A2791C8DF00C288CB /* AppDelegate.swift */; };
 		E282B30D2791C8DF00C288CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B30C2791C8DF00C288CB /* SceneDelegate.swift */; };
 		E282B3142791C8E200C288CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E282B3132791C8E200C288CB /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E260BB1E2792C98800B68B24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E282B3072791C8DF00C288CB /* ImagePresetsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePresetsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282B30A2791C8DF00C288CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E282B30C2791C8DF00C288CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +54,17 @@
 		E260BB1C2792C1E400B68B24 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E260BB1D2792C97600B68B24 /* User */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E260BB1D2792C97600B68B24 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E260BB1E2792C98800B68B24 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		E282B2FE2791C8DF00C288CB = {
@@ -268,6 +279,7 @@
 				E282B33C2791FCC000C288CB /* ApiService.swift in Sources */,
 				E282B3392791FB3A00C288CB /* Color.swift in Sources */,
 				E282B30D2791C8DF00C288CB /* SceneDelegate.swift in Sources */,
+				E260BB1F2792C98800B68B24 /* User.swift in Sources */,
 				E282B32F2791F4D100C288CB /* AssemblyModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

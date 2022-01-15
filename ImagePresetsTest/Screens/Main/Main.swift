@@ -18,6 +18,7 @@ final class Main: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        presenter.fetchUser()
     }
     
     private func setupNavigationBar() {
@@ -25,4 +26,18 @@ final class Main: UIViewController {
     }
 }
 
-extension Main: MainViewProtocol {}
+extension Main: MainViewProtocol {
+    func showSpinner() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.startAnimating()
+            self?.activityIndicator.isHidden = false
+        }
+    }
+    
+    func hideSpinner() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.activityIndicator.isHidden = true
+        }
+    }
+}
