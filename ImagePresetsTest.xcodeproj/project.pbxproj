@@ -49,6 +49,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E260BB1C2792C1E400B68B24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E282B2FE2791C8DF00C288CB = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +78,8 @@
 				E282B31E2791C96500C288CB /* Application */,
 				E282B31F2791C97800C288CB /* Dependencies */,
 				E282B3202791C98A00C288CB /* Extensions */,
-				E282B3212791C99A00C288CB /* Model */,
 				E282B3222791C9A400C288CB /* Resourses */,
+				E260BB1C2792C1E400B68B24 /* Model */,
 				E282B3232791C9B600C288CB /* Screens */,
 			);
 			path = ImagePresetsTest;
@@ -105,13 +112,6 @@
 				E282B3362791FB1C00C288CB /* UIkit */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E282B3212791C99A00C288CB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E282B3222791C9A400C288CB /* Resourses */ = {
@@ -411,7 +411,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FFYJJ79MSE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = /Users/macintosh/ImagePresetsTest/ImagePresetsTest/Resourses/Plist/Info.plist;
+				INFOPLIST_FILE = /Users/macintosh/Documents/ImagePresetsTest/ImagePresetsTest/Resourses/Plist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -438,7 +438,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FFYJJ79MSE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = /Users/macintosh/ImagePresetsTest/ImagePresetsTest/Resourses/Plist/Info.plist;
+				INFOPLIST_FILE = /Users/macintosh/Documents/ImagePresetsTest/ImagePresetsTest/Resourses/Plist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
