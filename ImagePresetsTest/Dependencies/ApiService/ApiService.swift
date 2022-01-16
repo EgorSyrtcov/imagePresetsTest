@@ -43,7 +43,6 @@ final class ApiService {
                     print("Error serializing dictionary", jsonErr)
                 }
                 
-                
             }.resume()
         }
     

@@ -10,6 +10,9 @@ import Foundation
 struct User {
     let id: String
     let userName: String
+    var imageURL: String? {
+        return "http://dev.bgsoft.biz/task/\(id).jpg"
+    }
     let photoUrl: String
     let userUrl: String
     let colors: [String]

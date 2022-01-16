@@ -12,32 +12,63 @@ final class Main: UIViewController {
     // MARK: - Properties
     var presenter: MainViewPresenterProtocol!
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationBar()
         presenter.fetchUser()
+        setupCollectionView()
     }
     
     private func setupNavigationBar() {
-        self.title = "Main image presents screen"
+        self.title = "Main image presents"
     }
+    
+    private func setupCollectionView() {
+        collectionView.registerNibForCell(UserCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+
 }
 
 extension Main: MainViewProtocol {
-    func showSpinner() {
+    
+    func reloadCollection() {
         DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.startAnimating()
-            self?.activityIndicator.isHidden = false
+            self?.updatePageControlNumberOfPage()
+            self?.collectionView.reloadData()
         }
     }
     
-    func hideSpinner() {
-        DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.isHidden = true
-        }
+    private func updatePageControlNumberOfPage() {
+        pageControl.numberOfPages = presenter.numberOfRowsInSection()
+    }
+}
+
+extension Main: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfRowsInSection()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: UserCell = collectionView.dequeueReusableCell(for: indexPath)
+        let user = presenter.getUser(by: indexPath)
+        cell.setupUser(user)
+        return cell
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+}
+
+extension Main: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
     }
 }

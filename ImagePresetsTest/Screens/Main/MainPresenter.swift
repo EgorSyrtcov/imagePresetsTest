@@ -8,14 +8,15 @@
 import Foundation
 
 protocol MainViewProtocol: AnyObject {
-    func showSpinner()
-    func hideSpinner()
+    func reloadCollection()
 }
 
 protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, router: RouterProtocol, dependencies: Dependencies)
     
     func fetchUser()
+    func numberOfRowsInSection() -> Int
+    func getUser(by indexPath: IndexPath) -> User
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
@@ -36,13 +37,22 @@ final class MainPresenter: MainViewPresenterProtocol {
 extension MainPresenter {
     
     func fetchUser() {
-        view?.showSpinner()
         dependencies.apiService.fetchUsers { [weak self] users in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self?.allUsers = users
-                self?.view?.hideSpinner()
-            }
+            let sorted = users.sorted(by: { $0.userName < $1.userName })
+                self?.allUsers = sorted
+                self?.view?.reloadCollection()
         }
     }
 
+}
+
+extension MainPresenter {
+    
+    func numberOfRowsInSection() -> Int {
+        return allUsers.count
+    }
+    
+    func getUser(by indexPath: IndexPath) -> User {
+        return allUsers[indexPath.item]
+    }
 }
