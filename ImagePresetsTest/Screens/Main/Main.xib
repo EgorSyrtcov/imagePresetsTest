@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3SW-bD-Ozr">
-                    <rect key="frame" x="0.0" y="50" width="414" height="846"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3SW-bD-Ozr">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jJE-lb-Igl">
                         <size key="itemSize" width="100" height="100"/>
@@ -31,7 +31,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="20" translatesAutoresizingMaskIntoConstraints="NO" id="xhT-l2-WkU">
-                    <rect key="frame" x="86" y="836" width="242.5" height="26"/>
+                    <rect key="frame" x="86" y="756" width="242.5" height="26"/>
                     <color key="pageIndicatorTintColor" systemColor="systemBlueColor"/>
                     <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
                 </pageControl>
@@ -40,11 +40,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="3SW-bD-Ozr" secondAttribute="bottom" id="0eH-P3-Liv"/>
-                <constraint firstItem="3SW-bD-Ozr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="J3x-jd-jnK"/>
-                <constraint firstItem="xhT-l2-WkU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Y2S-c6-lUL"/>
-                <constraint firstItem="3SW-bD-Ozr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ZWN-xZ-pBI"/>
+                <constraint firstItem="3SW-bD-Ozr" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="J3x-jd-jnK"/>
+                <constraint firstItem="xhT-l2-WkU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-80" id="Y2S-c6-lUL"/>
+                <constraint firstItem="3SW-bD-Ozr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZWN-xZ-pBI"/>
                 <constraint firstItem="xhT-l2-WkU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sIK-pv-nqP"/>
-                <constraint firstItem="3SW-bD-Ozr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wmj-g2-QrH"/>
+                <constraint firstItem="3SW-bD-Ozr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wmj-g2-QrH"/>
             </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="90.401785714285708"/>
         </view>

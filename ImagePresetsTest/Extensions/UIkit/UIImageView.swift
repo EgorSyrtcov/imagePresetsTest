@@ -25,6 +25,7 @@ extension UIImageView {
         superview?.layoutIfNeeded()
         let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .medium)
         addSubview(activityIndicator)
+        activityIndicator.style = .large
         activityIndicator.center = self.center
         activityIndicator.startAnimating()
         

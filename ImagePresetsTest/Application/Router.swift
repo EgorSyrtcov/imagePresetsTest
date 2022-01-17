@@ -15,6 +15,7 @@ protocol RouterMain {
 protocol RouterProtocol: RouterMain {
     func initialViewController()
     func popToRoot()
+    func pushUserDetailScreen(user: User, point: UserDetailEntryPoint)
 }
 
 final class Router: RouterProtocol {
@@ -37,6 +38,17 @@ final class Router: RouterProtocol {
     func popToRoot() {
         if let navigationController = navigationController {
             navigationController.popToRootViewController(animated: true)
+        }
+    }
+    
+    func pushUserDetailScreen(user: User, point: UserDetailEntryPoint) {
+        if let navigationController = navigationController {
+            guard let userDetailViewController = assemblyBuilder?.createDetailModule(
+                router: self,
+                user: user,
+                point: point
+            ) else { return }
+            navigationController.pushViewController(userDetailViewController, animated: true)
         }
     }
 }

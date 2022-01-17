@@ -17,10 +17,11 @@ protocol MainViewPresenterProtocol: AnyObject {
     func fetchUser()
     func numberOfRowsInSection() -> Int
     func getUser(by indexPath: IndexPath) -> User
+    func pushUserDetailScreen(_ user: User?, point: UserDetailEntryPoint)
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
-    
+  
     private weak var view: MainViewProtocol?
     private var router: RouterProtocol?
     private var dependencies: Dependencies
@@ -54,5 +55,13 @@ extension MainPresenter {
     
     func getUser(by indexPath: IndexPath) -> User {
         return allUsers[indexPath.item]
+    }
+}
+
+extension MainPresenter {
+    
+    func pushUserDetailScreen(_ user: User?, point: UserDetailEntryPoint) {
+        guard let user = user else { return }
+        router?.pushUserDetailScreen(user: user, point: point)
     }
 }

@@ -51,12 +51,19 @@ extension Main: MainViewProtocol {
 
 extension Main: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return presenter.numberOfRowsInSection()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell: UserCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.delegate = self
         let user = presenter.getUser(by: indexPath)
         cell.setupUser(user)
         return cell
@@ -68,7 +75,23 @@ extension Main: UICollectionViewDelegate, UICollectionViewDataSource, UIScrollVi
 }
 
 extension Main: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.frame.size
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(
+            width: collectionView.frame.width,
+            height: collectionView.frame.height - 10)
+    }
+}
+
+extension Main: UserCellDelegate {
+    func didTapAuthorButton(user: User?) {
+        presenter.pushUserDetailScreen(user, point: .author)
+    }
+    
+    func didTapPhotoButton(user: User?) {
+        presenter.pushUserDetailScreen(user, point: .photo)
     }
 }

@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol UserCellDelegate {
+    func didTapAuthorButton(user: User?)
+    func didTapPhotoButton(user: User?)
+}
+
+
 final class UserCell: UICollectionViewCell {
+    
+    var delegate: UserCellDelegate?
+    private var user: User?
     
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
@@ -19,9 +28,19 @@ final class UserCell: UICollectionViewCell {
     }
     
     func setupUser(_ user: User) {
+        self.user = user
         name.text = ("Author: \(user.userName)")
+        
         guard let urlString = user.imageURL else { return }
         imageView.loadImageUsingCache(withUrl: urlString)
+    }
+    
+    @IBAction func authorTouchAction(_ sender: UIButton) {
+        delegate?.didTapAuthorButton(user: user)
+    }
+    
+    @IBAction func photoTouchAction(_ sender: UIButton) {
+        delegate?.didTapPhotoButton(user: user)
     }
     
     override func layoutSubviews() {

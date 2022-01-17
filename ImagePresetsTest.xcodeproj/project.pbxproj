@@ -12,6 +12,9 @@
 		E260BB232792DF2100B68B24 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260BB222792DF2100B68B24 /* UICollectionView.swift */; };
 		E260BB272792E9FE00B68B24 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260BB252792E9FE00B68B24 /* UserCell.swift */; };
 		E260BB282792E9FE00B68B24 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E260BB262792E9FE00B68B24 /* UserCell.xib */; };
+		E27096EE2794ABD90007CC05 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27096EC2794ABD90007CC05 /* UserDetail.swift */; };
+		E27096EF2794ABD90007CC05 /* UserDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = E27096ED2794ABD90007CC05 /* UserDetail.xib */; };
+		E27096F52794B79D0007CC05 /* UserDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27096F42794B79D0007CC05 /* UserDetailPresenter.swift */; };
 		E276E996279343F8000B3A6E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276E995279343F8000B3A6E /* UIImageView.swift */; };
 		E282B30B2791C8DF00C288CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B30A2791C8DF00C288CB /* AppDelegate.swift */; };
 		E282B30D2791C8DF00C288CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B30C2791C8DF00C288CB /* SceneDelegate.swift */; };
@@ -25,6 +28,7 @@
 		E282B3352791F90200C288CB /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B3342791F90200C288CB /* Dependencies.swift */; };
 		E282B3392791FB3A00C288CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B3382791FB3A00C288CB /* Color.swift */; };
 		E282B33C2791FCC000C288CB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B33B2791FCC000C288CB /* ApiService.swift */; };
+		E285116127953F4F005E04F7 /* UserDetailEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285116027953F4F005E04F7 /* UserDetailEntryPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,9 @@
 		E260BB222792DF2100B68B24 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		E260BB252792E9FE00B68B24 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		E260BB262792E9FE00B68B24 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		E27096EC2794ABD90007CC05 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		E27096ED2794ABD90007CC05 /* UserDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetail.xib; sourceTree = "<group>"; };
+		E27096F42794B79D0007CC05 /* UserDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPresenter.swift; sourceTree = "<group>"; };
 		E276E995279343F8000B3A6E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E282B3072791C8DF00C288CB /* ImagePresetsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePresetsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E282B30A2791C8DF00C288CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +55,7 @@
 		E282B3342791F90200C288CB /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		E282B3382791FB3A00C288CB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E282B33B2791FCC000C288CB /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E285116027953F4F005E04F7 /* UserDetailEntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailEntryPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,17 @@
 				E260BB262792E9FE00B68B24 /* UserCell.xib */,
 			);
 			path = UserCell;
+			sourceTree = "<group>";
+		};
+		E27096EA2794AB7B0007CC05 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E27096F42794B79D0007CC05 /* UserDetailPresenter.swift */,
+				E27096EC2794ABD90007CC05 /* UserDetail.swift */,
+				E27096ED2794ABD90007CC05 /* UserDetail.xib */,
+				E285116027953F4F005E04F7 /* UserDetailEntryPoint.swift */,
+			);
+			path = UserDetail;
 			sourceTree = "<group>";
 		};
 		E282B2FE2791C8DF00C288CB = {
@@ -157,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				E282B3272791CAEA00C288CB /* Main */,
+				E27096EA2794AB7B0007CC05 /* UserDetail */,
 				E282B3262791CAB100C288CB /* Launch */,
 			);
 			path = Screens;
@@ -283,6 +303,7 @@
 			files = (
 				E260BB282792E9FE00B68B24 /* UserCell.xib in Resources */,
 				E282B3172791C8E200C288CB /* LaunchScreen.storyboard in Resources */,
+				E27096EF2794ABD90007CC05 /* UserDetail.xib in Resources */,
 				E282B32D2791CB7200C288CB /* Main.xib in Resources */,
 				E282B3142791C8E200C288CB /* Assets.xcassets in Resources */,
 			);
@@ -295,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E285116127953F4F005E04F7 /* UserDetailEntryPoint.swift in Sources */,
 				E282B3352791F90200C288CB /* Dependencies.swift in Sources */,
 				E260BB272792E9FE00B68B24 /* UserCell.swift in Sources */,
 				E276E996279343F8000B3A6E /* UIImageView.swift in Sources */,
@@ -305,9 +327,11 @@
 				E260BB232792DF2100B68B24 /* UICollectionView.swift in Sources */,
 				E260BB212792DF1B00B68B24 /* UICollectionViewCell.swift in Sources */,
 				E282B33C2791FCC000C288CB /* ApiService.swift in Sources */,
+				E27096F52794B79D0007CC05 /* UserDetailPresenter.swift in Sources */,
 				E282B3392791FB3A00C288CB /* Color.swift in Sources */,
 				E282B30D2791C8DF00C288CB /* SceneDelegate.swift in Sources */,
 				E260BB1F2792C98800B68B24 /* User.swift in Sources */,
+				E27096EE2794ABD90007CC05 /* UserDetail.swift in Sources */,
 				E282B32F2791F4D100C288CB /* AssemblyModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
