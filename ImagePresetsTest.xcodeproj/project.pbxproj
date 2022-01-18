@@ -29,6 +29,7 @@
 		E282B3392791FB3A00C288CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B3382791FB3A00C288CB /* Color.swift */; };
 		E282B33C2791FCC000C288CB /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282B33B2791FCC000C288CB /* ApiService.swift */; };
 		E285116127953F4F005E04F7 /* UserDetailEntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285116027953F4F005E04F7 /* UserDetailEntryPoint.swift */; };
+		E2861F5C279698240087B895 /* SwipingCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2861F5B279698240087B895 /* SwipingCarouselFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		E282B3382791FB3A00C288CB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E282B33B2791FCC000C288CB /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E285116027953F4F005E04F7 /* UserDetailEntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailEntryPoint.swift; sourceTree = "<group>"; };
+		E2861F5B279698240087B895 /* SwipingCarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCarouselFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		E282B3092791C8DF00C288CB /* ImagePresetsTest */ = {
 			isa = PBXGroup;
 			children = (
+				E2861F59279697EF0087B895 /* Components */,
 				E282B31E2791C96500C288CB /* Application */,
 				E282B31F2791C97800C288CB /* Dependencies */,
 				E282B3202791C98A00C288CB /* Extensions */,
@@ -243,6 +246,22 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
+		E2861F59279697EF0087B895 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E2861F5A279698130087B895 /* UPCarouselFlowLayout */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E2861F5A279698130087B895 /* UPCarouselFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				E2861F5B279698240087B895 /* SwipingCarouselFlowLayout.swift */,
+			);
+			path = UPCarouselFlowLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,6 +343,7 @@
 				E282B3332791F58A00C288CB /* MainPresenter.swift in Sources */,
 				E282B30B2791C8DF00C288CB /* AppDelegate.swift in Sources */,
 				E282B3312791F4EE00C288CB /* Router.swift in Sources */,
+				E2861F5C279698240087B895 /* SwipingCarouselFlowLayout.swift in Sources */,
 				E260BB232792DF2100B68B24 /* UICollectionView.swift in Sources */,
 				E260BB212792DF1B00B68B24 /* UICollectionViewCell.swift in Sources */,
 				E282B33C2791FCC000C288CB /* ApiService.swift in Sources */,

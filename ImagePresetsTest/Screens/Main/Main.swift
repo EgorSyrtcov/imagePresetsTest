@@ -82,7 +82,7 @@ extension Main: UICollectionViewDelegateFlowLayout {
     ) -> CGSize {
         return CGSize(
             width: collectionView.frame.width,
-            height: collectionView.frame.height - 10)
+            height: collectionView.frame.height)
     }
 }
 

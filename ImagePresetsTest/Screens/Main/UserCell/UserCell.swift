@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol UserCellDelegate {
+protocol UserCellDelegate: AnyObject {
     func didTapAuthorButton(user: User?)
     func didTapPhotoButton(user: User?)
 }
@@ -15,12 +15,13 @@ protocol UserCellDelegate {
 
 final class UserCell: UICollectionViewCell {
     
-    var delegate: UserCellDelegate?
+    weak var delegate: UserCellDelegate?
     private var user: User?
     
     @IBOutlet private weak var name: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var mainCellView: UIView!
+    @IBOutlet weak var containerImageView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,6 +48,7 @@ final class UserCell: UICollectionViewCell {
         super.layoutSubviews()
         
         setupImageView()
+        setupContainerImageView()
     }
     
 }
@@ -57,5 +59,15 @@ extension UserCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 20
+    }
+    
+    private func setupContainerImageView() {
+        containerImageView.layer.masksToBounds = false
+        containerImageView.layer.shadowColor = UIColor.black.cgColor
+        containerImageView.layer.shadowOffset = .zero
+        containerImageView.layer.shadowRadius = 5
+        containerImageView.layer.shadowOpacity = 0.35
+        containerImageView.layer.shouldRasterize = true
+        containerImageView.layer.cornerRadius = 20
     }
 }
