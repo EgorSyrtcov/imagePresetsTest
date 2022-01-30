@@ -28,8 +28,9 @@ final class UserCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setupUser(_ user: User) {
+    func setupUser(_ user: User?) {
         self.user = user
+        guard let user = user else { return }
         name.text = ("Author: \(user.userName)")
         
         guard let urlString = user.imageURL else { return }

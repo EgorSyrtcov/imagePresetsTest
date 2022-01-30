@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="338"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMS-Ec-Irm">
-                                        <rect key="frame" x="128" y="20" width="63" height="30"/>
+                                        <rect key="frame" x="20" y="20" width="279" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -69,9 +69,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LMS-Ec-Irm" secondAttribute="trailing" constant="20" id="1lx-WZ-7do"/>
                                     <constraint firstItem="EuE-Pt-PH9" firstAttribute="leading" secondItem="lzi-Ju-aaW" secondAttribute="leading" constant="10" id="AhN-Aa-txh"/>
                                     <constraint firstAttribute="bottom" secondItem="EuE-Pt-PH9" secondAttribute="bottom" constant="20" id="I8d-YZ-oWE"/>
                                     <constraint firstAttribute="trailing" secondItem="EuE-Pt-PH9" secondAttribute="trailing" constant="10" id="JEl-Lu-ngo"/>
+                                    <constraint firstItem="LMS-Ec-Irm" firstAttribute="leading" secondItem="lzi-Ju-aaW" secondAttribute="leading" constant="20" id="MGE-ZS-HI4"/>
                                     <constraint firstItem="LMS-Ec-Irm" firstAttribute="top" secondItem="lzi-Ju-aaW" secondAttribute="top" constant="20" id="PNS-Bj-efE"/>
                                     <constraint firstItem="LMS-Ec-Irm" firstAttribute="centerX" secondItem="lzi-Ju-aaW" secondAttribute="centerX" id="dv1-tO-u2o"/>
                                     <constraint firstItem="om1-uH-90F" firstAttribute="top" secondItem="lzi-Ju-aaW" secondAttribute="top" id="eT2-xY-kd7"/>
