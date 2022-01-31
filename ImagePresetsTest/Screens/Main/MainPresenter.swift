@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-private let kScreenWidth = UIScreen.main.bounds.width
+
 
 protocol MainViewProtocol: AnyObject {
     func reloadCollection()
@@ -22,6 +22,8 @@ protocol MainViewPresenterProtocol: AnyObject {
     func getUser(by indexPath: IndexPath) -> User?
     func pushUserDetailScreen(_ user: User?, point: UserDetailEntryPoint)
     func infinityScrollView(scrollView: UIScrollView) -> Int
+    
+    func setScreenWidth(size: CGSize)
 }
 
 final class MainPresenter: MainViewPresenterProtocol {
@@ -29,6 +31,8 @@ final class MainPresenter: MainViewPresenterProtocol {
     private weak var view: MainViewProtocol?
     private var router: RouterProtocol?
     private var dependencies: Dependencies
+    
+    private var kScreenWidth = UIScreen.main.bounds.width
     
     private var allUsers = [User]()
     
@@ -98,5 +102,7 @@ extension MainPresenter {
         router?.pushUserDetailScreen(user: user, point: point)
     }
     
-    
+    func setScreenWidth(size: CGSize) {
+        kScreenWidth = size.width
+    }
 }

@@ -41,6 +41,22 @@ final class Main: UIViewController {
         collectionView.dataSource = self
     }
     
+    override func viewWillTransition(
+        to size: CGSize,
+        with coordinator: UIViewControllerTransitionCoordinator) {
+            super.viewWillTransition(to: size, with: coordinator)
+            
+            presenter.setScreenWidth(size: size)
+            collectionView.collectionViewLayout.invalidateLayout()
+            
+            let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
+            
+            DispatchQueue.main.async {
+                self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+                self.collectionView.reloadData()
+            }
+        }
+    
 }
 
 extension Main: MainViewProtocol {
